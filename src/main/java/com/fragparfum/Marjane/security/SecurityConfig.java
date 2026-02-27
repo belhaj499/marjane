@@ -52,6 +52,8 @@ public class SecurityConfig {
         // بدل allowedOrigins ب allowedOriginPatterns
         config.setAllowedOriginPatterns(List.of(
                 "http://localhost:5173",
+                "http://localhost:5175",
+                "http://localhost:*",
                 "https://*.onrender.com"
         ));
 
