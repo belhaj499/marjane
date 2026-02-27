@@ -14,5 +14,6 @@ public interface ProductService {
     void delete(Long id);
     Product updatePartial(Long id, UpdateProductRequest dto);
     Page<Product> search(String gender, Double minPrice, Double maxPrice, Pageable pageable);
-    Product updateImage(Long id, String imageUrl);
+    Product updateImage(Long id, String imageUrl, String imagePublicId);
+    Product save(Product product);
 }

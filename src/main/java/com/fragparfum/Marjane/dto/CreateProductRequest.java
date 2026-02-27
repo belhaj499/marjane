@@ -7,10 +7,11 @@ public class CreateProductRequest {
 
     private String name;
     private String brand;
-    private String gender; // "HOMME" / "FEMME" / "UNISEX"
+    private String gender;
     private Double price;
     private Integer stock;
     private Integer volumeMl;
     private String description;
-    private String imageUrl; // تقدر تبقى null حتى تدير upload
+    private String imageUrl;
+    private String imagePublicId;
 }

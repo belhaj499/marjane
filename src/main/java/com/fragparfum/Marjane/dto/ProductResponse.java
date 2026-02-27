@@ -2,6 +2,9 @@ package com.fragparfum.Marjane.dto;
 
 import lombok.Data;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Data
 public class ProductResponse {
     private Long id;
@@ -10,11 +13,13 @@ public class ProductResponse {
     private String gender;
     private Double price;
 
-    private Integer stock;      // مهم للإدارة
-    private Integer volumeMl;   // مهم للإدارة
-    private Boolean active;     // مهم للإدارة
+    private Integer stock;
+    private Integer volumeMl;
+    private Boolean active;
 
-    private Boolean available;  // للclient
+    private Boolean available;
     private String description;
+
     private String imageUrl;
+    private List<String> imageUrls = new ArrayList<>();
 }

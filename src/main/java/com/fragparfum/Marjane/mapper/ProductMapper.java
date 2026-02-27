@@ -27,6 +27,11 @@ public class ProductMapper {
         r.setAvailable(p.getStock() != null && p.getStock() > 0);
         r.setDescription(p.getDescription());
         r.setImageUrl(p.getImageUrl());
+        r.setImageUrls(
+                p.getImages() == null
+                        ? java.util.List.of()
+                        : p.getImages().stream().map(img -> img.getUrl()).toList()
+        );
         return r;
     }
 
@@ -46,6 +51,7 @@ public class ProductMapper {
         p.setVolumeMl(dto.getVolumeMl());
         p.setDescription(dto.getDescription());
         p.setImageUrl(dto.getImageUrl());
+        p.setImagePublicId(dto.getImagePublicId());
         p.setActive(true);
 
         return p;
@@ -66,6 +72,7 @@ public class ProductMapper {
         if (dto.getVolumeMl() != null) existing.setVolumeMl(dto.getVolumeMl());
         if (dto.getDescription() != null) existing.setDescription(dto.getDescription());
         if (dto.getImageUrl() != null) existing.setImageUrl(dto.getImageUrl());
+        if (dto.getImagePublicId() != null) existing.setImagePublicId(dto.getImagePublicId());
         if (dto.getActive() != null) existing.setActive(dto.getActive());
     }
 }

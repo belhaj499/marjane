@@ -6,6 +6,9 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 @Table(name = "products")
 @Getter
@@ -38,7 +41,10 @@ public class Product {
 
     private Boolean active = true;
     private String imageUrl;
+    private String imagePublicId;
 
-
-
+    @ElementCollection
+    @CollectionTable(name = "product_gallery_images", joinColumns = @JoinColumn(name = "product_id"))
+    @OrderColumn(name = "sort_order")
+    private List<ProductImage> images = new ArrayList<>();
 }
